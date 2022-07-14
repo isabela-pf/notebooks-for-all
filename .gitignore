@@ -9,3 +9,4 @@ __pycache__
 .doit.db.*
 nbconvert_html5/_version.py
 tests/outputs/*.html
+*venv
