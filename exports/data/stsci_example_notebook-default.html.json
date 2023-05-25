@@ -1,0 +1,1270 @@
+[
+    {
+        "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AAA contrast ratio thresholds",
+        "help": "Elements must have sufficient color contrast",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.6/color-contrast-enhanced?application=axeAPI",
+        "id": "color-contrast-enhanced",
+        "impact": "serious",
+        "nodes": [
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "bgColor": "#ffffff",
+                            "contrastRatio": 6.19,
+                            "expectedContrastRatio": "7:1",
+                            "fgColor": "#616161",
+                            "fontSize": "9.8pt (13px)",
+                            "fontWeight": "normal",
+                            "messageKey": null,
+                            "shadowColor": null
+                        },
+                        "id": "color-contrast-enhanced",
+                        "impact": "serious",
+                        "message": "Element has insufficient color contrast of 6.19 (foreground color: #616161, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 7:1",
+                        "relatedNodes": [
+                            {
+                                "html": "<main class=\"jp-Notebook\" data-jp-theme-light=\"true\" data-jp-theme-name=\"JupyterLab Light\">",
+                                "target": [
+                                    "main"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 6.19 (foreground color: #616161, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 7:1",
+                "html": "<div class=\"jp-InputPrompt jp-InputArea-prompt\">In&nbsp;[&nbsp;]:</div>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    ".jp-mod-noOutputs.jp-CodeCell:nth-child(6) > .jp-Cell-inputWrapper > .jp-InputArea.jp-Cell-inputArea > .jp-InputPrompt.jp-InputArea-prompt"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "bgColor": "#f8f8f8",
+                            "contrastRatio": 4.83,
+                            "expectedContrastRatio": "7:1",
+                            "fgColor": "#008000",
+                            "fontSize": "9.8pt (13px)",
+                            "fontWeight": "bold",
+                            "messageKey": null,
+                            "shadowColor": null
+                        },
+                        "id": "color-contrast-enhanced",
+                        "impact": "serious",
+                        "message": "Element has insufficient color contrast of 4.83 (foreground color: #008000, background color: #f8f8f8, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 7:1",
+                        "relatedNodes": [
+                            {
+                                "html": "<div class=\"highlight hl-ipython3\">",
+                                "target": [
+                                    ".jp-mod-noOutputs.jp-CodeCell:nth-child(6) > .jp-Cell-inputWrapper > .jp-InputArea.jp-Cell-inputArea > .jp-CodeMirrorEditor.jp-Editor.jp-InputArea-editor > .CodeMirror.cm-s-jupyter > .highlight.hl-ipython3"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.83 (foreground color: #008000, background color: #f8f8f8, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 7:1",
+                "html": "<span class=\"kn\">import</span>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    ".kn:nth-child(5)"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "bgColor": "#f8f8f8",
+                            "contrastRatio": 4.83,
+                            "expectedContrastRatio": "7:1",
+                            "fgColor": "#008000",
+                            "fontSize": "9.8pt (13px)",
+                            "fontWeight": "bold",
+                            "messageKey": null,
+                            "shadowColor": null
+                        },
+                        "id": "color-contrast-enhanced",
+                        "impact": "serious",
+                        "message": "Element has insufficient color contrast of 4.83 (foreground color: #008000, background color: #f8f8f8, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 7:1",
+                        "relatedNodes": [
+                            {
+                                "html": "<div class=\"highlight hl-ipython3\">",
+                                "target": [
+                                    ".jp-mod-noOutputs.jp-CodeCell:nth-child(6) > .jp-Cell-inputWrapper > .jp-InputArea.jp-Cell-inputArea > .jp-CodeMirrorEditor.jp-Editor.jp-InputArea-editor > .CodeMirror.cm-s-jupyter > .highlight.hl-ipython3"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.83 (foreground color: #008000, background color: #f8f8f8, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 7:1",
+                "html": "<span class=\"k\">as</span>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    ".k:nth-child(7)"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "bgColor": "#f8f8f8",
+                            "contrastRatio": 4.83,
+                            "expectedContrastRatio": "7:1",
+                            "fgColor": "#008000",
+                            "fontSize": "9.8pt (13px)",
+                            "fontWeight": "bold",
+                            "messageKey": null,
+                            "shadowColor": null
+                        },
+                        "id": "color-contrast-enhanced",
+                        "impact": "serious",
+                        "message": "Element has insufficient color contrast of 4.83 (foreground color: #008000, background color: #f8f8f8, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 7:1",
+                        "relatedNodes": [
+                            {
+                                "html": "<div class=\"highlight hl-ipython3\">",
+                                "target": [
+                                    ".jp-mod-noOutputs.jp-CodeCell:nth-child(6) > .jp-Cell-inputWrapper > .jp-InputArea.jp-Cell-inputArea > .jp-CodeMirrorEditor.jp-Editor.jp-InputArea-editor > .CodeMirror.cm-s-jupyter > .highlight.hl-ipython3"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.83 (foreground color: #008000, background color: #f8f8f8, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 7:1",
+                "html": "<span class=\"kn\">from</span>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    ".kn:nth-child(9)"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "bgColor": "#f8f8f8",
+                            "contrastRatio": 4.83,
+                            "expectedContrastRatio": "7:1",
+                            "fgColor": "#008000",
+                            "fontSize": "9.8pt (13px)",
+                            "fontWeight": "bold",
+                            "messageKey": null,
+                            "shadowColor": null
+                        },
+                        "id": "color-contrast-enhanced",
+                        "impact": "serious",
+                        "message": "Element has insufficient color contrast of 4.83 (foreground color: #008000, background color: #f8f8f8, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 7:1",
+                        "relatedNodes": [
+                            {
+                                "html": "<div class=\"highlight hl-ipython3\">",
+                                "target": [
+                                    ".jp-mod-noOutputs.jp-CodeCell:nth-child(6) > .jp-Cell-inputWrapper > .jp-InputArea.jp-Cell-inputArea > .jp-CodeMirrorEditor.jp-Editor.jp-InputArea-editor > .CodeMirror.cm-s-jupyter > .highlight.hl-ipython3"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.83 (foreground color: #008000, background color: #f8f8f8, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 7:1",
+                "html": "<span class=\"kn\">import</span>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    ".kn:nth-child(11)"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "bgColor": "#f8f8f8",
+                            "contrastRatio": 4.83,
+                            "expectedContrastRatio": "7:1",
+                            "fgColor": "#008000",
+                            "fontSize": "9.8pt (13px)",
+                            "fontWeight": "bold",
+                            "messageKey": null,
+                            "shadowColor": null
+                        },
+                        "id": "color-contrast-enhanced",
+                        "impact": "serious",
+                        "message": "Element has insufficient color contrast of 4.83 (foreground color: #008000, background color: #f8f8f8, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 7:1",
+                        "relatedNodes": [
+                            {
+                                "html": "<div class=\"highlight hl-ipython3\">",
+                                "target": [
+                                    ".jp-mod-noOutputs.jp-CodeCell:nth-child(6) > .jp-Cell-inputWrapper > .jp-InputArea.jp-Cell-inputArea > .jp-CodeMirrorEditor.jp-Editor.jp-InputArea-editor > .CodeMirror.cm-s-jupyter > .highlight.hl-ipython3"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.83 (foreground color: #008000, background color: #f8f8f8, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 7:1",
+                "html": "<span class=\"kn\">from</span>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    ".kn:nth-child(13)"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "bgColor": "#f8f8f8",
+                            "contrastRatio": 4.83,
+                            "expectedContrastRatio": "7:1",
+                            "fgColor": "#008000",
+                            "fontSize": "9.8pt (13px)",
+                            "fontWeight": "bold",
+                            "messageKey": null,
+                            "shadowColor": null
+                        },
+                        "id": "color-contrast-enhanced",
+                        "impact": "serious",
+                        "message": "Element has insufficient color contrast of 4.83 (foreground color: #008000, background color: #f8f8f8, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 7:1",
+                        "relatedNodes": [
+                            {
+                                "html": "<div class=\"highlight hl-ipython3\">",
+                                "target": [
+                                    ".jp-mod-noOutputs.jp-CodeCell:nth-child(6) > .jp-Cell-inputWrapper > .jp-InputArea.jp-Cell-inputArea > .jp-CodeMirrorEditor.jp-Editor.jp-InputArea-editor > .CodeMirror.cm-s-jupyter > .highlight.hl-ipython3"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.83 (foreground color: #008000, background color: #f8f8f8, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 7:1",
+                "html": "<span class=\"kn\">import</span>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    ".kn:nth-child(15)"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "bgColor": "#f8f8f8",
+                            "contrastRatio": 4.83,
+                            "expectedContrastRatio": "7:1",
+                            "fgColor": "#008000",
+                            "fontSize": "9.8pt (13px)",
+                            "fontWeight": "bold",
+                            "messageKey": null,
+                            "shadowColor": null
+                        },
+                        "id": "color-contrast-enhanced",
+                        "impact": "serious",
+                        "message": "Element has insufficient color contrast of 4.83 (foreground color: #008000, background color: #f8f8f8, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 7:1",
+                        "relatedNodes": [
+                            {
+                                "html": "<div class=\"highlight hl-ipython3\">",
+                                "target": [
+                                    ".jp-mod-noOutputs.jp-CodeCell:nth-child(6) > .jp-Cell-inputWrapper > .jp-InputArea.jp-Cell-inputArea > .jp-CodeMirrorEditor.jp-Editor.jp-InputArea-editor > .CodeMirror.cm-s-jupyter > .highlight.hl-ipython3"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.83 (foreground color: #008000, background color: #f8f8f8, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 7:1",
+                "html": "<span class=\"kn\">import</span>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    ".kn:nth-child(17)"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "bgColor": "#f8f8f8",
+                            "contrastRatio": 4.83,
+                            "expectedContrastRatio": "7:1",
+                            "fgColor": "#008000",
+                            "fontSize": "9.8pt (13px)",
+                            "fontWeight": "bold",
+                            "messageKey": null,
+                            "shadowColor": null
+                        },
+                        "id": "color-contrast-enhanced",
+                        "impact": "serious",
+                        "message": "Element has insufficient color contrast of 4.83 (foreground color: #008000, background color: #f8f8f8, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 7:1",
+                        "relatedNodes": [
+                            {
+                                "html": "<div class=\"highlight hl-ipython3\">",
+                                "target": [
+                                    ".jp-mod-noOutputs.jp-CodeCell:nth-child(6) > .jp-Cell-inputWrapper > .jp-InputArea.jp-Cell-inputArea > .jp-CodeMirrorEditor.jp-Editor.jp-InputArea-editor > .CodeMirror.cm-s-jupyter > .highlight.hl-ipython3"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.83 (foreground color: #008000, background color: #f8f8f8, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 7:1",
+                "html": "<span class=\"k\">as</span>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    ".k:nth-child(19)"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "bgColor": "#f8f8f8",
+                            "contrastRatio": 4.83,
+                            "expectedContrastRatio": "7:1",
+                            "fgColor": "#008000",
+                            "fontSize": "9.8pt (13px)",
+                            "fontWeight": "bold",
+                            "messageKey": null,
+                            "shadowColor": null
+                        },
+                        "id": "color-contrast-enhanced",
+                        "impact": "serious",
+                        "message": "Element has insufficient color contrast of 4.83 (foreground color: #008000, background color: #f8f8f8, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 7:1",
+                        "relatedNodes": [
+                            {
+                                "html": "<div class=\"highlight hl-ipython3\">",
+                                "target": [
+                                    ".jp-mod-noOutputs.jp-CodeCell:nth-child(6) > .jp-Cell-inputWrapper > .jp-InputArea.jp-Cell-inputArea > .jp-CodeMirrorEditor.jp-Editor.jp-InputArea-editor > .CodeMirror.cm-s-jupyter > .highlight.hl-ipython3"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.83 (foreground color: #008000, background color: #f8f8f8, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 7:1",
+                "html": "<span class=\"kn\">from</span>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    ".kn:nth-child(21)"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "bgColor": "#f8f8f8",
+                            "contrastRatio": 4.83,
+                            "expectedContrastRatio": "7:1",
+                            "fgColor": "#008000",
+                            "fontSize": "9.8pt (13px)",
+                            "fontWeight": "bold",
+                            "messageKey": null,
+                            "shadowColor": null
+                        },
+                        "id": "color-contrast-enhanced",
+                        "impact": "serious",
+                        "message": "Element has insufficient color contrast of 4.83 (foreground color: #008000, background color: #f8f8f8, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 7:1",
+                        "relatedNodes": [
+                            {
+                                "html": "<div class=\"highlight hl-ipython3\">",
+                                "target": [
+                                    ".jp-mod-noOutputs.jp-CodeCell:nth-child(6) > .jp-Cell-inputWrapper > .jp-InputArea.jp-Cell-inputArea > .jp-CodeMirrorEditor.jp-Editor.jp-InputArea-editor > .CodeMirror.cm-s-jupyter > .highlight.hl-ipython3"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.83 (foreground color: #008000, background color: #f8f8f8, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 7:1",
+                "html": "<span class=\"kn\">import</span>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    ".kn:nth-child(23)"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "bgColor": "#f8f8f8",
+                            "contrastRatio": 4.83,
+                            "expectedContrastRatio": "7:1",
+                            "fgColor": "#008000",
+                            "fontSize": "9.8pt (13px)",
+                            "fontWeight": "bold",
+                            "messageKey": null,
+                            "shadowColor": null
+                        },
+                        "id": "color-contrast-enhanced",
+                        "impact": "serious",
+                        "message": "Element has insufficient color contrast of 4.83 (foreground color: #008000, background color: #f8f8f8, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 7:1",
+                        "relatedNodes": [
+                            {
+                                "html": "<div class=\"highlight hl-ipython3\">",
+                                "target": [
+                                    ".jp-mod-noOutputs.jp-CodeCell:nth-child(6) > .jp-Cell-inputWrapper > .jp-InputArea.jp-Cell-inputArea > .jp-CodeMirrorEditor.jp-Editor.jp-InputArea-editor > .CodeMirror.cm-s-jupyter > .highlight.hl-ipython3"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.83 (foreground color: #008000, background color: #f8f8f8, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 7:1",
+                "html": "<span class=\"kn\">from</span>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    ".kn:nth-child(25)"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "bgColor": "#f8f8f8",
+                            "contrastRatio": 4.83,
+                            "expectedContrastRatio": "7:1",
+                            "fgColor": "#008000",
+                            "fontSize": "9.8pt (13px)",
+                            "fontWeight": "bold",
+                            "messageKey": null,
+                            "shadowColor": null
+                        },
+                        "id": "color-contrast-enhanced",
+                        "impact": "serious",
+                        "message": "Element has insufficient color contrast of 4.83 (foreground color: #008000, background color: #f8f8f8, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 7:1",
+                        "relatedNodes": [
+                            {
+                                "html": "<div class=\"highlight hl-ipython3\">",
+                                "target": [
+                                    ".jp-mod-noOutputs.jp-CodeCell:nth-child(6) > .jp-Cell-inputWrapper > .jp-InputArea.jp-Cell-inputArea > .jp-CodeMirrorEditor.jp-Editor.jp-InputArea-editor > .CodeMirror.cm-s-jupyter > .highlight.hl-ipython3"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.83 (foreground color: #008000, background color: #f8f8f8, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 7:1",
+                "html": "<span class=\"kn\">import</span>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    ".kn:nth-child(27)"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "bgColor": "#ffffff",
+                            "contrastRatio": 4.6,
+                            "expectedContrastRatio": "7:1",
+                            "fgColor": "#1976d2",
+                            "fontSize": "10.5pt (14px)",
+                            "fontWeight": "normal",
+                            "messageKey": null,
+                            "shadowColor": null
+                        },
+                        "id": "color-contrast-enhanced",
+                        "impact": "serious",
+                        "message": "Element has insufficient color contrast of 4.6 (foreground color: #1976d2, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 7:1",
+                        "relatedNodes": [
+                            {
+                                "html": "<main class=\"jp-Notebook\" data-jp-theme-light=\"true\" data-jp-theme-name=\"JupyterLab Light\">",
+                                "target": [
+                                    "main"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.6 (foreground color: #1976d2, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 7:1",
+                "html": "<a href=\"https://astroquery.readthedocs.io/en/latest/\">Astroquery</a>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    "p:nth-child(3) > a:nth-child(1)"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "bgColor": "#ffffff",
+                            "contrastRatio": 4.6,
+                            "expectedContrastRatio": "7:1",
+                            "fgColor": "#1976d2",
+                            "fontSize": "10.5pt (14px)",
+                            "fontWeight": "normal",
+                            "messageKey": null,
+                            "shadowColor": null
+                        },
+                        "id": "color-contrast-enhanced",
+                        "impact": "serious",
+                        "message": "Element has insufficient color contrast of 4.6 (foreground color: #1976d2, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 7:1",
+                        "relatedNodes": [
+                            {
+                                "html": "<main class=\"jp-Notebook\" data-jp-theme-light=\"true\" data-jp-theme-name=\"JupyterLab Light\">",
+                                "target": [
+                                    "main"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.6 (foreground color: #1976d2, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 7:1",
+                "html": "<a href=\"https://github.com/spacetelescope/style-guides/blob/master/guides/where-to-put-your-data.md\">data guide</a>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    "a:nth-child(2)"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "bgColor": "#ffffff",
+                            "contrastRatio": 6.19,
+                            "expectedContrastRatio": "7:1",
+                            "fgColor": "#616161",
+                            "fontSize": "9.8pt (13px)",
+                            "fontWeight": "normal",
+                            "messageKey": null,
+                            "shadowColor": null
+                        },
+                        "id": "color-contrast-enhanced",
+                        "impact": "serious",
+                        "message": "Element has insufficient color contrast of 6.19 (foreground color: #616161, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 7:1",
+                        "relatedNodes": [
+                            {
+                                "html": "<main class=\"jp-Notebook\" data-jp-theme-light=\"true\" data-jp-theme-name=\"JupyterLab Light\">",
+                                "target": [
+                                    "main"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 6.19 (foreground color: #616161, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 7:1",
+                "html": "<div class=\"jp-InputPrompt jp-InputArea-prompt\">In&nbsp;[&nbsp;]:</div>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    ".jp-mod-noOutputs.jp-CodeCell:nth-child(11) > .jp-Cell-inputWrapper > .jp-InputArea.jp-Cell-inputArea > .jp-InputPrompt.jp-InputArea-prompt"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "bgColor": "#f8f8f8",
+                            "contrastRatio": 5.94,
+                            "expectedContrastRatio": "7:1",
+                            "fgColor": "#ba2121",
+                            "fontSize": "9.8pt (13px)",
+                            "fontWeight": "normal",
+                            "messageKey": null,
+                            "shadowColor": null
+                        },
+                        "id": "color-contrast-enhanced",
+                        "impact": "serious",
+                        "message": "Element has insufficient color contrast of 5.94 (foreground color: #ba2121, background color: #f8f8f8, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 7:1",
+                        "relatedNodes": [
+                            {
+                                "html": "<div class=\"highlight hl-ipython3\">",
+                                "target": [
+                                    ".jp-mod-noOutputs.jp-CodeCell:nth-child(11) > .jp-Cell-inputWrapper > .jp-InputArea.jp-Cell-inputArea > .jp-CodeMirrorEditor.jp-Editor.jp-InputArea-editor > .CodeMirror.cm-s-jupyter > .highlight.hl-ipython3"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.94 (foreground color: #ba2121, background color: #f8f8f8, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 7:1",
+                "html": "<span class=\"s1\">'kplr008957091'</span>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    ".s1:nth-child(10)"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "bgColor": "#f8f8f8",
+                            "contrastRatio": 5.94,
+                            "expectedContrastRatio": "7:1",
+                            "fgColor": "#ba2121",
+                            "fontSize": "9.8pt (13px)",
+                            "fontWeight": "normal",
+                            "messageKey": null,
+                            "shadowColor": null
+                        },
+                        "id": "color-contrast-enhanced",
+                        "impact": "serious",
+                        "message": "Element has insufficient color contrast of 5.94 (foreground color: #ba2121, background color: #f8f8f8, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 7:1",
+                        "relatedNodes": [
+                            {
+                                "html": "<div class=\"highlight hl-ipython3\">",
+                                "target": [
+                                    ".jp-mod-noOutputs.jp-CodeCell:nth-child(11) > .jp-Cell-inputWrapper > .jp-InputArea.jp-Cell-inputArea > .jp-CodeMirrorEditor.jp-Editor.jp-InputArea-editor > .CodeMirror.cm-s-jupyter > .highlight.hl-ipython3"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.94 (foreground color: #ba2121, background color: #f8f8f8, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 7:1",
+                "html": "<span class=\"s1\">'Kepler'</span>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    ".s1:nth-child(14)"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "bgColor": "#f8f8f8",
+                            "contrastRatio": 5.94,
+                            "expectedContrastRatio": "7:1",
+                            "fgColor": "#ba2121",
+                            "fontSize": "9.8pt (13px)",
+                            "fontWeight": "normal",
+                            "messageKey": null,
+                            "shadowColor": null
+                        },
+                        "id": "color-contrast-enhanced",
+                        "impact": "serious",
+                        "message": "Element has insufficient color contrast of 5.94 (foreground color: #ba2121, background color: #f8f8f8, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 7:1",
+                        "relatedNodes": [
+                            {
+                                "html": "<div class=\"highlight hl-ipython3\">",
+                                "target": [
+                                    ".jp-mod-noOutputs.jp-CodeCell:nth-child(11) > .jp-Cell-inputWrapper > .jp-InputArea.jp-Cell-inputArea > .jp-CodeMirrorEditor.jp-Editor.jp-InputArea-editor > .CodeMirror.cm-s-jupyter > .highlight.hl-ipython3"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 5.94 (foreground color: #ba2121, background color: #f8f8f8, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 7:1",
+                "html": "<span class=\"s1\">'kplr008957091-2012277125453_lpd-targ.fits.gz'</span>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    ".s1:nth-child(36)"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "bgColor": "#f8f8f8",
+                            "contrastRatio": 4.83,
+                            "expectedContrastRatio": "7:1",
+                            "fgColor": "#008000",
+                            "fontSize": "9.8pt (13px)",
+                            "fontWeight": "bold",
+                            "messageKey": null,
+                            "shadowColor": null
+                        },
+                        "id": "color-contrast-enhanced",
+                        "impact": "serious",
+                        "message": "Element has insufficient color contrast of 4.83 (foreground color: #008000, background color: #f8f8f8, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 7:1",
+                        "relatedNodes": [
+                            {
+                                "html": "<div class=\"highlight hl-ipython3\">",
+                                "target": [
+                                    ".jp-mod-noOutputs.jp-CodeCell:nth-child(11) > .jp-Cell-inputWrapper > .jp-InputArea.jp-Cell-inputArea > .jp-CodeMirrorEditor.jp-Editor.jp-InputArea-editor > .CodeMirror.cm-s-jupyter > .highlight.hl-ipython3"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.83 (foreground color: #008000, background color: #f8f8f8, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 7:1",
+                "html": "<span class=\"kc\">False</span>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    ".jp-mod-noOutputs.jp-CodeCell:nth-child(11) > .jp-Cell-inputWrapper > .jp-InputArea.jp-Cell-inputArea > .jp-CodeMirrorEditor.jp-Editor.jp-InputArea-editor > .CodeMirror.cm-s-jupyter > .highlight.hl-ipython3 > pre > .kc"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "bgColor": "#ffffff",
+                            "contrastRatio": 6.19,
+                            "expectedContrastRatio": "7:1",
+                            "fgColor": "#616161",
+                            "fontSize": "9.8pt (13px)",
+                            "fontWeight": "normal",
+                            "messageKey": null,
+                            "shadowColor": null
+                        },
+                        "id": "color-contrast-enhanced",
+                        "impact": "serious",
+                        "message": "Element has insufficient color contrast of 6.19 (foreground color: #616161, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 7:1",
+                        "relatedNodes": [
+                            {
+                                "html": "<main class=\"jp-Notebook\" data-jp-theme-light=\"true\" data-jp-theme-name=\"JupyterLab Light\">",
+                                "target": [
+                                    "main"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 6.19 (foreground color: #616161, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 7:1",
+                "html": "<div class=\"jp-InputPrompt jp-InputArea-prompt\">In&nbsp;[15]:</div>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    ".jp-CodeCell:nth-child(14) > .jp-Cell-inputWrapper > .jp-InputArea.jp-Cell-inputArea > .jp-InputPrompt.jp-InputArea-prompt"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "bgColor": "#ffffff",
+                            "contrastRatio": 6.19,
+                            "expectedContrastRatio": "7:1",
+                            "fgColor": "#616161",
+                            "fontSize": "9.8pt (13px)",
+                            "fontWeight": "normal",
+                            "messageKey": null,
+                            "shadowColor": null
+                        },
+                        "id": "color-contrast-enhanced",
+                        "impact": "serious",
+                        "message": "Element has insufficient color contrast of 6.19 (foreground color: #616161, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 7:1",
+                        "relatedNodes": [
+                            {
+                                "html": "<main class=\"jp-Notebook\" data-jp-theme-light=\"true\" data-jp-theme-name=\"JupyterLab Light\">",
+                                "target": [
+                                    "main"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 6.19 (foreground color: #616161, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 7:1",
+                "html": "<div class=\"jp-OutputPrompt jp-OutputArea-prompt\">Out[15]:</div>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    ".jp-OutputPrompt"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "bgColor": "#ffffff",
+                            "contrastRatio": 6.19,
+                            "expectedContrastRatio": "7:1",
+                            "fgColor": "#616161",
+                            "fontSize": "9.8pt (13px)",
+                            "fontWeight": "normal",
+                            "messageKey": null,
+                            "shadowColor": null
+                        },
+                        "id": "color-contrast-enhanced",
+                        "impact": "serious",
+                        "message": "Element has insufficient color contrast of 6.19 (foreground color: #616161, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 7:1",
+                        "relatedNodes": [
+                            {
+                                "html": "<main class=\"jp-Notebook\" data-jp-theme-light=\"true\" data-jp-theme-name=\"JupyterLab Light\">",
+                                "target": [
+                                    "main"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 6.19 (foreground color: #616161, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 7:1",
+                "html": "<div class=\"jp-InputPrompt jp-InputArea-prompt\">In&nbsp;[&nbsp;]:</div>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    ".jp-mod-noOutputs.jp-CodeCell:nth-child(15) > .jp-Cell-inputWrapper > .jp-InputArea.jp-Cell-inputArea > .jp-InputPrompt.jp-InputArea-prompt"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "bgColor": "#f8f8f8",
+                            "contrastRatio": 4.57,
+                            "expectedContrastRatio": "7:1",
+                            "fgColor": "#3d7b7b",
+                            "fontSize": "9.8pt (13px)",
+                            "fontWeight": "normal",
+                            "messageKey": null,
+                            "shadowColor": null
+                        },
+                        "id": "color-contrast-enhanced",
+                        "impact": "serious",
+                        "message": "Element has insufficient color contrast of 4.57 (foreground color: #3d7b7b, background color: #f8f8f8, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 7:1",
+                        "relatedNodes": [
+                            {
+                                "html": "<div class=\"highlight hl-ipython3\">",
+                                "target": [
+                                    ".jp-mod-noOutputs.jp-CodeCell:nth-child(15) > .jp-Cell-inputWrapper > .jp-InputArea.jp-Cell-inputArea > .jp-CodeMirrorEditor.jp-Editor.jp-InputArea-editor > .CodeMirror.cm-s-jupyter > .highlight.hl-ipython3"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.57 (foreground color: #3d7b7b, background color: #f8f8f8, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 7:1",
+                "html": "<span class=\"c1\"># Download the products</span>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    ".c1"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "bgColor": "#f8f8f8",
+                            "contrastRatio": 4.83,
+                            "expectedContrastRatio": "7:1",
+                            "fgColor": "#008000",
+                            "fontSize": "9.8pt (13px)",
+                            "fontWeight": "bold",
+                            "messageKey": null,
+                            "shadowColor": null
+                        },
+                        "id": "color-contrast-enhanced",
+                        "impact": "serious",
+                        "message": "Element has insufficient color contrast of 4.83 (foreground color: #008000, background color: #f8f8f8, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 7:1",
+                        "relatedNodes": [
+                            {
+                                "html": "<div class=\"highlight hl-ipython3\">",
+                                "target": [
+                                    ".jp-mod-noOutputs.jp-CodeCell:nth-child(15) > .jp-Cell-inputWrapper > .jp-InputArea.jp-Cell-inputArea > .jp-CodeMirrorEditor.jp-Editor.jp-InputArea-editor > .CodeMirror.cm-s-jupyter > .highlight.hl-ipython3"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.83 (foreground color: #008000, background color: #f8f8f8, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 7:1",
+                "html": "<span class=\"kc\">False</span>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    ".kc:nth-child(11)"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "bgColor": "#f8f8f8",
+                            "contrastRatio": 4.83,
+                            "expectedContrastRatio": "7:1",
+                            "fgColor": "#008000",
+                            "fontSize": "9.8pt (13px)",
+                            "fontWeight": "bold",
+                            "messageKey": null,
+                            "shadowColor": null
+                        },
+                        "id": "color-contrast-enhanced",
+                        "impact": "serious",
+                        "message": "Element has insufficient color contrast of 4.83 (foreground color: #008000, background color: #f8f8f8, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 7:1",
+                        "relatedNodes": [
+                            {
+                                "html": "<div class=\"highlight hl-ipython3\">",
+                                "target": [
+                                    ".jp-mod-noOutputs.jp-CodeCell:nth-child(15) > .jp-Cell-inputWrapper > .jp-InputArea.jp-Cell-inputArea > .jp-CodeMirrorEditor.jp-Editor.jp-InputArea-editor > .CodeMirror.cm-s-jupyter > .highlight.hl-ipython3"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.83 (foreground color: #008000, background color: #f8f8f8, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 7:1",
+                "html": "<span class=\"kc\">False</span>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    ".kc:nth-child(15)"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "bgColor": "#ffffff",
+                            "contrastRatio": 4.6,
+                            "expectedContrastRatio": "7:1",
+                            "fgColor": "#1976d2",
+                            "fontSize": "10.5pt (14px)",
+                            "fontWeight": "normal",
+                            "messageKey": null,
+                            "shadowColor": null
+                        },
+                        "id": "color-contrast-enhanced",
+                        "impact": "serious",
+                        "message": "Element has insufficient color contrast of 4.6 (foreground color: #1976d2, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 7:1",
+                        "relatedNodes": [
+                            {
+                                "html": "<main class=\"jp-Notebook\" data-jp-theme-light=\"true\" data-jp-theme-name=\"JupyterLab Light\">",
+                                "target": [
+                                    "main"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.6 (foreground color: #1976d2, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 7:1",
+                "html": "<a href=\"https://mast.stsci.edu/api/v0/index.html\">MAST API</a>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    "li:nth-child(1) > a"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "bgColor": "#ffffff",
+                            "contrastRatio": 4.6,
+                            "expectedContrastRatio": "7:1",
+                            "fgColor": "#1976d2",
+                            "fontSize": "10.5pt (14px)",
+                            "fontWeight": "normal",
+                            "messageKey": null,
+                            "shadowColor": null
+                        },
+                        "id": "color-contrast-enhanced",
+                        "impact": "serious",
+                        "message": "Element has insufficient color contrast of 4.6 (foreground color: #1976d2, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 7:1",
+                        "relatedNodes": [
+                            {
+                                "html": "<main class=\"jp-Notebook\" data-jp-theme-light=\"true\" data-jp-theme-name=\"JupyterLab Light\">",
+                                "target": [
+                                    "main"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.6 (foreground color: #1976d2, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 7:1",
+                "html": "<a href=\"https://archive.stsci.edu/kepler/\">Kepler Archive Page (MAST)</a>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    "li:nth-child(2) > a"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "bgColor": "#ffffff",
+                            "contrastRatio": 4.6,
+                            "expectedContrastRatio": "7:1",
+                            "fgColor": "#1976d2",
+                            "fontSize": "10.5pt (14px)",
+                            "fontWeight": "normal",
+                            "messageKey": null,
+                            "shadowColor": null
+                        },
+                        "id": "color-contrast-enhanced",
+                        "impact": "serious",
+                        "message": "Element has insufficient color contrast of 4.6 (foreground color: #1976d2, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 7:1",
+                        "relatedNodes": [
+                            {
+                                "html": "<main class=\"jp-Notebook\" data-jp-theme-light=\"true\" data-jp-theme-name=\"JupyterLab Light\">",
+                                "target": [
+                                    "main"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.6 (foreground color: #1976d2, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 7:1",
+                "html": "<a href=\"https://archive.stsci.edu/kepler/manuals/archive_manual.pdf\">Kepler Archive Manual</a>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    "li:nth-child(3) > a"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "bgColor": "#ffffff",
+                            "contrastRatio": 4.6,
+                            "expectedContrastRatio": "7:1",
+                            "fgColor": "#1976d2",
+                            "fontSize": "10.5pt (14px)",
+                            "fontWeight": "normal",
+                            "messageKey": null,
+                            "shadowColor": null
+                        },
+                        "id": "color-contrast-enhanced",
+                        "impact": "serious",
+                        "message": "Element has insufficient color contrast of 4.6 (foreground color: #1976d2, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 7:1",
+                        "relatedNodes": [
+                            {
+                                "html": "<main class=\"jp-Notebook\" data-jp-theme-light=\"true\" data-jp-theme-name=\"JupyterLab Light\">",
+                                "target": [
+                                    "main"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.6 (foreground color: #1976d2, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 7:1",
+                "html": "<a href=\"https://exo.mast.stsci.edu/\">Exo.MAST website</a>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    "a[href$=\"exo.mast.stsci.edu/\"]"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "bgColor": "#ffffff",
+                            "contrastRatio": 4.6,
+                            "expectedContrastRatio": "7:1",
+                            "fgColor": "#1976d2",
+                            "fontSize": "10.5pt (14px)",
+                            "fontWeight": "normal",
+                            "messageKey": null,
+                            "shadowColor": null
+                        },
+                        "id": "color-contrast-enhanced",
+                        "impact": "serious",
+                        "message": "Element has insufficient color contrast of 4.6 (foreground color: #1976d2, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 7:1",
+                        "relatedNodes": [
+                            {
+                                "html": "<main class=\"jp-Notebook\" data-jp-theme-light=\"true\" data-jp-theme-name=\"JupyterLab Light\">",
+                                "target": [
+                                    "main"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.6 (foreground color: #1976d2, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 7:1",
+                "html": "<a href=\"#top\">Top of Page</a>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    "a[href$=\"#top\"]"
+                ]
+            }
+        ],
+        "tags": [
+            "cat.color",
+            "wcag2aaa",
+            "wcag146",
+            "ACT"
+        ]
+    },
+    {
+        "description": "Ensures all page content is contained by landmarks",
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.6/region?application=axeAPI",
+        "id": "region",
+        "impact": "moderate",
+        "nodes": [
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "isIframe": false
+                        },
+                        "id": "region",
+                        "impact": "moderate",
+                        "message": "Some page content is not contained by landmarks",
+                        "relatedNodes": []
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks",
+                "html": "<div id=\"MathJax_Message\" style=\"\">Loading [MathJax]/jax/output/CommonHTML/fonts/TeX/fontdata.js</div>",
+                "impact": "moderate",
+                "none": [],
+                "target": [
+                    "#MathJax_Message"
+                ]
+            }
+        ],
+        "tags": [
+            "cat.keyboard",
+            "best-practice"
+        ]
+    },
+    {
+        "description": "Ensure touch target have sufficient size and space",
+        "help": "All touch targets must be 24px large, or leave sufficient space",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.6/target-size?application=axeAPI",
+        "id": "target-size",
+        "impact": "serious",
+        "nodes": [
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "height": 16,
+                            "minSize": 24,
+                            "width": 64.3
+                        },
+                        "id": "target-size",
+                        "impact": "serious",
+                        "message": "Target has insufficient size (64.3px by 16px, should be at least 24px by 24px)",
+                        "relatedNodes": []
+                    },
+                    {
+                        "data": {
+                            "closestOffset": 22.4,
+                            "minOffset": 24
+                        },
+                        "id": "target-offset",
+                        "impact": "serious",
+                        "message": "Target has insufficient offset from its closest neighbor (22.4px should be at least 24px)",
+                        "relatedNodes": [
+                            {
+                                "html": "<a href=\"https://archive.stsci.edu/kepler/\">Kepler Archive Page (MAST)</a>",
+                                "target": [
+                                    "li:nth-child(2) > a"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Target has insufficient size (64.3px by 16px, should be at least 24px by 24px)\n  Target has insufficient offset from its closest neighbor (22.4px should be at least 24px)",
+                "html": "<a href=\"https://mast.stsci.edu/api/v0/index.html\">MAST API</a>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    "li:nth-child(1) > a"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "height": 16,
+                            "minSize": 24,
+                            "width": 140.1
+                        },
+                        "id": "target-size",
+                        "impact": "serious",
+                        "message": "Target has insufficient size (140.1px by 16px, should be at least 24px by 24px)",
+                        "relatedNodes": []
+                    },
+                    {
+                        "data": {
+                            "closestOffset": 22.4,
+                            "minOffset": 24
+                        },
+                        "id": "target-offset",
+                        "impact": "serious",
+                        "message": "Target has insufficient offset from its closest neighbor (22.4px should be at least 24px)",
+                        "relatedNodes": [
+                            {
+                                "html": "<a href=\"https://archive.stsci.edu/kepler/\">Kepler Archive Page (MAST)</a>",
+                                "target": [
+                                    "li:nth-child(2) > a"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Target has insufficient size (140.1px by 16px, should be at least 24px by 24px)\n  Target has insufficient offset from its closest neighbor (22.4px should be at least 24px)",
+                "html": "<a href=\"https://archive.stsci.edu/kepler/manuals/archive_manual.pdf\">Kepler Archive Manual</a>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    "li:nth-child(3) > a"
+                ]
+            },
+            {
+                "all": [],
+                "any": [
+                    {
+                        "data": {
+                            "height": 16,
+                            "minSize": 24,
+                            "width": 118
+                        },
+                        "id": "target-size",
+                        "impact": "serious",
+                        "message": "Target has insufficient size (118px by 16px, should be at least 24px by 24px)",
+                        "relatedNodes": []
+                    },
+                    {
+                        "data": {
+                            "closestOffset": 22.4,
+                            "minOffset": 24
+                        },
+                        "id": "target-offset",
+                        "impact": "serious",
+                        "message": "Target has insufficient offset from its closest neighbor (22.4px should be at least 24px)",
+                        "relatedNodes": [
+                            {
+                                "html": "<a href=\"https://archive.stsci.edu/kepler/manuals/archive_manual.pdf\">Kepler Archive Manual</a>",
+                                "target": [
+                                    "li:nth-child(3) > a"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "failureSummary": "Fix any of the following:\n  Target has insufficient size (118px by 16px, should be at least 24px by 24px)\n  Target has insufficient offset from its closest neighbor (22.4px should be at least 24px)",
+                "html": "<a href=\"https://exo.mast.stsci.edu/\">Exo.MAST website</a>",
+                "impact": "serious",
+                "none": [],
+                "target": [
+                    "a[href$=\"exo.mast.stsci.edu/\"]"
+                ]
+            }
+        ],
+        "tags": [
+            "wcag22aa",
+            "wcag258",
+            "cat.sensory-and-visual-cues"
+        ]
+    }
+]

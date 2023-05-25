@@ -1,0 +1,1807 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>stsci_example_notebook</title>
+    <meta name="color-scheme" content="light">
+    <meta name="description" content="">
+
+
+    
+
+    
+    
+
+    <style type="text/css">pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #ffffcc }
+.highlight { background: #f8f8f8; }
+.highlight .c { color: #3D7B7B; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #9C6500 } /* Comment.Preproc */
+.highlight .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #E40000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #008400 } /* Generic.Inserted */
+.highlight .go { color: #717171 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #687822 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #717171; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #767600 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #A45A77 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
+    
+
+    
+    <style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap');
+body {
+    /* prefer system fonts https://css-tricks.com/snippets/css/system-font-stack/ */
+    /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
+    font-family: 'Atkinson Hyperlegible';
+    font-size: 1.25em;
+}
+
+/* we need to visually hide content that may have focus */
+.visually-hidden:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+a.cell-index:before {
+    content: "cell ";
+}
+
+header nav li {
+    display: flex;
+}
+a.cell-index:after {
+    content: ":";
+}
+
+
+textarea {
+    font-family: monospace;
+}
+
+main>header details.nav {
+    background-color: white;
+}
+
+main>header {
+    overflow: auto;
+    opacity: .9;
+    position: sticky;
+    top: 0;
+    max-height: 100vh;
+}
+
+main > table.cells > thead {
+    display: none;
+}
+
+.static td.execution_count label:not(:empty):before {
+    content: "In: ";
+}
+
+table.cells {
+    width: 100%;
+}
+
+tr.cell {
+    display: grid;
+}
+
+tr.code.cell {
+    grid-template-rows: 2rem 1rem auto auto;
+    grid-template-columns: 5fr 95fr;
+    justify-items: start;
+    grid-template-areas: "execution_count source" "toolbar source" ". source" "outputs outputs";
+    align-items: start;
+    justify-items: start;
+    width: 95vw;
+}
+
+tr.markdown.cell {
+    grid-template-columns: 95fr 5fr;
+    grid-template-areas: "source toolbar";
+}
+
+tr.cell>td.source {
+    grid-area: source;
+    width: 100%;
+    overflow-x: auto;
+}
+
+tr.cell>td.cell_type {
+    grid-area: cell_type;
+}
+
+tr.cell>td.outputs {
+    overflow-x: auto;
+    grid-area: outputs;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+tr.cell>td.toolbar {
+    grid-area: toolbar;
+}
+
+tr.cell>td.execution_count {
+    grid-area: execution_count;
+}
+
+td.source form textarea {
+    width: 100%;
+}
+
+td.cell_type,
+tr.cell form label.cell_type,
+tr.markdown.cell td.outputs,
+tr.markdown.cell td.execution_count,
+.static td.toolbar,
+.static input.run,
+.static tr.markdown.cell td.source form textarea {
+    display: none;
+}
+
+td.source form textarea:focus~.render {
+    display: none;
+}</style>
+    <!-- Load mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    init_mathjax = function() {
+        if (window.MathJax) {
+        // MathJax loaded
+            MathJax.Hub.Config({
+                TeX: {
+                    equationNumbers: {
+                    autoNumber: "AMS",
+                    useLabelIds: true
+                    }
+                },
+                tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                    processEscapes: true,
+                    processEnvironments: true
+                },
+                displayAlign: 'center',
+                CommonHTML: {
+                    linebreaks: {
+                    automatic: true
+                    }
+                }
+            });
+
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        }
+    }
+    init_mathjax();
+    </script>
+    <!-- End of mathjax configuration --></head><body>
+    <header class="site">
+        <a class="visually-hidden" tabindex="0" href="#/cells">Skip to Main Content</a>
+        <a class="visually-hidden" tabindex="0" href="#site-settings-summary">Skip to Accessibility Settings</a>
+        <!-- search and site navigation would go here -->
+        <!-- links go to the original content -->
+    </header>
+    <main class="notebook static" aria-label="notebook" id="nb-main">
+        <header class="notebook" id="nb-header">
+            <details id="nb-nav" class="nav">
+                <summary id="nb-nav-summary"><span id="nb-nav-summary-name">stsci_example_notebook.ipynb</span>
+                    Navigation</summary>
+                <form id="nb-nav-cells">
+                    <label for="nb-nav-cells-widget">Navigate to Cell</label>
+                    <input type="range" id="nb-nav-cells-widget" value="1" min="1" max="22">
+                    <output></output>
+                </form>
+                <nav></nav>
+            </details>
+        </header>
+        <table class="notebook cells" aria-label="cells" aria-rowcount="21">
+            <colgroup>
+                <col class="execution_count">
+                <col class="source">
+                <col class="outputs">
+                <col class="cell_type">
+                <col class="metadata">
+                <col class="toolbar">
+            </colgroup>
+            <thead>
+                <tr class="cell">
+                    <th scope="col">execution count</th>
+                    <th scope="col">source</th>
+                    <th scope="col">outputs</th>
+                    <th scope="col">cell type</th>
+                    <th scope="col">metadata</th>
+                    <th scope="col">toolbar</th>
+                </tr>
+            </thead>
+            <tbody id="/cells">
+                
+                
+                
+
+
+<tr class="cell markdown " id="/cells/0" draggable="false" aria-busy="false"
+    aria-rowindex="1">
+    <td class="execution_count" hidden><label for="cell-0-source"
+            id="cell-0-exec"></label></td>
+    <td class="source" >
+        
+
+
+<form id="cell-0" aria-label="markdown cell 1">
+    <textarea readonly class="visually-hidden" name="source" id="cell-0-source" aria-hidden="false" autocomplete="off"
+        autocorrect="off" placeholder="" spellcheck="default" rows="2"
+        aria-labelledby="cell-0-exec" wrap="soft"><a id="top"></a>
+# Tutorial Title</textarea>
+    <div class="render" role="document" aria-hidden="false">
+        <p><a id="top"></a></p>
+<h1 id="tutorial-title">Tutorial Title</h1>
+
+        
+    </div>
+</form>
+</td>
+    <td class="outputs">
+        
+
+</td>
+    <td class="cell_type">
+
+<label class="cell_type">
+    <select name="cell_type" disabled>
+        <option  value="code">code</option>
+        <option selected value="markdown">markdown</option>
+        <option  value="raw">raw</option>
+        <option  value="unknown">unknown</option>
+    </select>
+</label>
+</td>
+    <td class="metadata">
+        <script id="/cells/0/metadata"
+            type="application/json">{
+  &quot;slideshow&quot;: {
+    &quot;slide_type&quot;: &quot;slide&quot;
+  }
+}</script>
+    </td>
+    <td class="toolbar">
+<div role="toolbar">
+    <input class="run" type="submit" form="cell-0" for="cell-0-source" value="run" title="run the cell"
+        tabindex="0">
+    <button onclick="document.querySelector('#cell-0-metadata').showModal()" title="show metadata">🛈</button>
+</div>
+</td>
+</tr>
+
+                
+                
+                
+                
+
+
+<tr class="cell markdown " id="/cells/1" draggable="false" aria-busy="false"
+    aria-rowindex="2">
+    <td class="execution_count" hidden><label for="cell-1-source"
+            id="cell-1-exec"></label></td>
+    <td class="source" >
+        
+
+
+<form id="cell-1" aria-label="markdown cell 2">
+    <textarea readonly class="visually-hidden" name="source" id="cell-1-source" aria-hidden="false" autocomplete="off"
+        autocorrect="off" placeholder="" spellcheck="default" rows="1"
+        aria-labelledby="cell-1-exec" wrap="soft">***</textarea>
+    <div class="render" role="document" aria-hidden="false">
+        <hr />
+
+        
+    </div>
+</form>
+</td>
+    <td class="outputs">
+        
+
+</td>
+    <td class="cell_type">
+
+<label class="cell_type">
+    <select name="cell_type" disabled>
+        <option  value="code">code</option>
+        <option selected value="markdown">markdown</option>
+        <option  value="raw">raw</option>
+        <option  value="unknown">unknown</option>
+    </select>
+</label>
+</td>
+    <td class="metadata">
+        <script id="/cells/1/metadata"
+            type="application/json">{
+  &quot;slideshow&quot;: {
+    &quot;slide_type&quot;: &quot;skip&quot;
+  }
+}</script>
+    </td>
+    <td class="toolbar">
+<div role="toolbar">
+    <input class="run" type="submit" form="cell-1" for="cell-1-source" value="run" title="run the cell"
+        tabindex="0">
+    <button onclick="document.querySelector('#cell-1-metadata').showModal()" title="show metadata">🛈</button>
+</div>
+</td>
+</tr>
+
+                
+                
+                
+                
+
+
+<tr class="cell markdown " id="/cells/2" draggable="false" aria-busy="false"
+    aria-rowindex="3">
+    <td class="execution_count" hidden><label for="cell-2-source"
+            id="cell-2-exec"></label></td>
+    <td class="source" >
+        
+
+
+<form id="cell-2" aria-label="markdown cell 3">
+    <textarea readonly class="visually-hidden" name="source" id="cell-2-source" aria-hidden="false" autocomplete="off"
+        autocorrect="off" placeholder="" spellcheck="default" rows="13"
+        aria-labelledby="cell-2-exec" wrap="soft">## Learning Goals
+Write three to five learning goals. A learning goal should describe what a reader should know or be able to do by the end of the tutorial that they didn't know or couldn't do before.
+
+```
+By the end of this tutorial, you will:
+
+- Understand how to use aperture photometry to turn a series of two-dimensional
+  images into a one-dimensional time series.
+- Be able to determine the most useful aperture for photometry on a *Kepler/K2*
+  target.
+- Create your own light curve for a single quarter/campaign of *Kepler/K2* data.
+
+```</textarea>
+    <div class="render" role="document" aria-hidden="false">
+        <h2 id="learning-goals">Learning Goals</h2>
+<p>Write three to five learning goals. A learning goal should describe what a reader should know or be able to do by the end of the tutorial that they didn't know or couldn't do before.</p>
+<pre><code>By the end of this tutorial, you will:
+
+- Understand how to use aperture photometry to turn a series of two-dimensional
+  images into a one-dimensional time series.
+- Be able to determine the most useful aperture for photometry on a *Kepler/K2*
+  target.
+- Create your own light curve for a single quarter/campaign of *Kepler/K2* data.
+
+</code></pre>
+
+        
+    </div>
+</form>
+</td>
+    <td class="outputs">
+        
+
+</td>
+    <td class="cell_type">
+
+<label class="cell_type">
+    <select name="cell_type" disabled>
+        <option  value="code">code</option>
+        <option selected value="markdown">markdown</option>
+        <option  value="raw">raw</option>
+        <option  value="unknown">unknown</option>
+    </select>
+</label>
+</td>
+    <td class="metadata">
+        <script id="/cells/2/metadata"
+            type="application/json">{}</script>
+    </td>
+    <td class="toolbar">
+<div role="toolbar">
+    <input class="run" type="submit" form="cell-2" for="cell-2-source" value="run" title="run the cell"
+        tabindex="0">
+    <button onclick="document.querySelector('#cell-2-metadata').showModal()" title="show metadata">🛈</button>
+</div>
+</td>
+</tr>
+
+                
+                
+                
+                
+
+
+<tr class="cell markdown " id="/cells/3" draggable="false" aria-busy="false"
+    aria-rowindex="4">
+    <td class="execution_count" hidden><label for="cell-3-source"
+            id="cell-3-exec"></label></td>
+    <td class="source" >
+        
+
+
+<form id="cell-3" aria-label="markdown cell 4">
+    <textarea readonly class="visually-hidden" name="source" id="cell-3-source" aria-hidden="false" autocomplete="off"
+        autocorrect="off" placeholder="" spellcheck="default" rows="4"
+        aria-labelledby="cell-3-exec" wrap="soft">## Introduction
+Write a short introduction explaining the purpose of the tutorial. Define any terms or common acronyms that your audience may not know. If you're using some kind of domain-specific astronomical symbol or unusual mathematical concept, make sure you define it (for example, in its mathematical form) and link to any definitions (from literature, Wikipedia, etc.).
+
+If there are background materials or resources that may be useful to the reader to provide additional context, you may link to it here. If your tutorial is a continuation from another tutorial, or there are other tutorials that would be useful for the reader to read before or after your tutorial, mention that here as well.</textarea>
+    <div class="render" role="document" aria-hidden="false">
+        <h2 id="introduction">Introduction</h2>
+<p>Write a short introduction explaining the purpose of the tutorial. Define any terms or common acronyms that your audience may not know. If you're using some kind of domain-specific astronomical symbol or unusual mathematical concept, make sure you define it (for example, in its mathematical form) and link to any definitions (from literature, Wikipedia, etc.).</p>
+<p>If there are background materials or resources that may be useful to the reader to provide additional context, you may link to it here. If your tutorial is a continuation from another tutorial, or there are other tutorials that would be useful for the reader to read before or after your tutorial, mention that here as well.</p>
+
+        
+    </div>
+</form>
+</td>
+    <td class="outputs">
+        
+
+</td>
+    <td class="cell_type">
+
+<label class="cell_type">
+    <select name="cell_type" disabled>
+        <option  value="code">code</option>
+        <option selected value="markdown">markdown</option>
+        <option  value="raw">raw</option>
+        <option  value="unknown">unknown</option>
+    </select>
+</label>
+</td>
+    <td class="metadata">
+        <script id="/cells/3/metadata"
+            type="application/json">{
+  &quot;slideshow&quot;: {
+    &quot;slide_type&quot;: &quot;slide&quot;
+  }
+}</script>
+    </td>
+    <td class="toolbar">
+<div role="toolbar">
+    <input class="run" type="submit" form="cell-3" for="cell-3-source" value="run" title="run the cell"
+        tabindex="0">
+    <button onclick="document.querySelector('#cell-3-metadata').showModal()" title="show metadata">🛈</button>
+</div>
+</td>
+</tr>
+
+                
+                
+                
+                
+
+
+<tr class="cell markdown " id="/cells/4" draggable="false" aria-busy="false"
+    aria-rowindex="5">
+    <td class="execution_count" hidden><label for="cell-4-source"
+            id="cell-4-exec"></label></td>
+    <td class="source" >
+        
+
+
+<form id="cell-4" aria-label="markdown cell 5">
+    <textarea readonly class="visually-hidden" name="source" id="cell-4-source" aria-hidden="false" autocomplete="off"
+        autocorrect="off" placeholder="" spellcheck="default" rows="6"
+        aria-labelledby="cell-4-exec" wrap="soft">## Imports
+Describe the libraries we're using here. If there's something unusual, explain what the library is, and why we need it.
+- *numpy* to handle array functions
+- *astropy.io fits* for accessing FITS files
+- *astropy.table Table* for creating tidy tables of the data
+- *matplotlib.pyplot* for plotting data</textarea>
+    <div class="render" role="document" aria-hidden="false">
+        <h2 id="imports">Imports</h2>
+<p>Describe the libraries we're using here. If there's something unusual, explain what the library is, and why we need it.</p>
+<ul>
+<li><em>numpy</em> to handle array functions</li>
+<li><em><a href="http://astropy.io">astropy.io</a> fits</em> for accessing FITS files</li>
+<li><em>astropy.table Table</em> for creating tidy tables of the data</li>
+<li><em>matplotlib.pyplot</em> for plotting data</li>
+</ul>
+
+        
+    </div>
+</form>
+</td>
+    <td class="outputs">
+        
+
+</td>
+    <td class="cell_type">
+
+<label class="cell_type">
+    <select name="cell_type" disabled>
+        <option  value="code">code</option>
+        <option selected value="markdown">markdown</option>
+        <option  value="raw">raw</option>
+        <option  value="unknown">unknown</option>
+    </select>
+</label>
+</td>
+    <td class="metadata">
+        <script id="/cells/4/metadata"
+            type="application/json">{
+  &quot;slideshow&quot;: {
+    &quot;slide_type&quot;: &quot;slide&quot;
+  }
+}</script>
+    </td>
+    <td class="toolbar">
+<div role="toolbar">
+    <input class="run" type="submit" form="cell-4" for="cell-4-source" value="run" title="run the cell"
+        tabindex="0">
+    <button onclick="document.querySelector('#cell-4-metadata').showModal()" title="show metadata">🛈</button>
+</div>
+</td>
+</tr>
+
+                
+                
+                
+                
+
+
+<tr class="cell code " id="/cells/5" draggable="false" aria-busy="false"
+    aria-rowindex="6">
+    <td class="execution_count" hidden><label for="cell-5-source"
+            id="cell-5-exec"></label></td>
+    <td class="source" >
+        
+
+
+<form id="cell-5" aria-label="code cell 6">
+    <textarea readonly class="visually-hidden" name="source" id="cell-5-source" aria-hidden="false" autocomplete="off"
+        autocorrect="off" placeholder="" spellcheck="default" rows="7"
+        aria-labelledby="cell-5-exec" wrap="soft">%matplotlib inline
+import numpy as np
+from astropy.io import fits
+from astropy.table import Table
+import matplotlib.pyplot as plt
+from astroquery.mast import Mast
+from astroquery.mast import Observations</textarea>
+    <div class="render" role="document" aria-hidden="true">
+        
+        <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
+<span class="kn">from</span> <span class="nn">astropy.table</span> <span class="kn">import</span> <span class="n">Table</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">astroquery.mast</span> <span class="kn">import</span> <span class="n">Mast</span>
+<span class="kn">from</span> <span class="nn">astroquery.mast</span> <span class="kn">import</span> <span class="n">Observations</span>
+</pre></div>
+
+    </div>
+</form>
+</td>
+    <td class="outputs">
+        
+
+</td>
+    <td class="cell_type">
+
+<label class="cell_type">
+    <select name="cell_type" disabled>
+        <option selected value="code">code</option>
+        <option  value="markdown">markdown</option>
+        <option  value="raw">raw</option>
+        <option  value="unknown">unknown</option>
+    </select>
+</label>
+</td>
+    <td class="metadata">
+        <script id="/cells/5/metadata"
+            type="application/json">{
+  &quot;slideshow&quot;: {
+    &quot;slide_type&quot;: &quot;fragment&quot;
+  }
+}</script>
+    </td>
+    <td class="toolbar">
+<div role="toolbar">
+    <input class="run" type="submit" form="cell-5" for="cell-5-source" value="run" title="run the cell"
+        tabindex="0">
+    <button onclick="document.querySelector('#cell-5-metadata').showModal()" title="show metadata">🛈</button>
+</div>
+</td>
+</tr>
+
+                
+                
+                
+                
+
+
+<tr class="cell markdown " id="/cells/6" draggable="false" aria-busy="false"
+    aria-rowindex="7">
+    <td class="execution_count" hidden><label for="cell-6-source"
+            id="cell-6-exec"></label></td>
+    <td class="source" >
+        
+
+
+<form id="cell-6" aria-label="markdown cell 7">
+    <textarea readonly class="visually-hidden" name="source" id="cell-6-source" aria-hidden="false" autocomplete="off"
+        autocorrect="off" placeholder="" spellcheck="default" rows="1"
+        aria-labelledby="cell-6-exec" wrap="soft">***</textarea>
+    <div class="render" role="document" aria-hidden="false">
+        <hr />
+
+        
+    </div>
+</form>
+</td>
+    <td class="outputs">
+        
+
+</td>
+    <td class="cell_type">
+
+<label class="cell_type">
+    <select name="cell_type" disabled>
+        <option  value="code">code</option>
+        <option selected value="markdown">markdown</option>
+        <option  value="raw">raw</option>
+        <option  value="unknown">unknown</option>
+    </select>
+</label>
+</td>
+    <td class="metadata">
+        <script id="/cells/6/metadata"
+            type="application/json">{}</script>
+    </td>
+    <td class="toolbar">
+<div role="toolbar">
+    <input class="run" type="submit" form="cell-6" for="cell-6-source" value="run" title="run the cell"
+        tabindex="0">
+    <button onclick="document.querySelector('#cell-6-metadata').showModal()" title="show metadata">🛈</button>
+</div>
+</td>
+</tr>
+
+                
+                
+                
+                
+
+
+<tr class="cell markdown " id="/cells/7" draggable="false" aria-busy="false"
+    aria-rowindex="8">
+    <td class="execution_count" hidden><label for="cell-7-source"
+            id="cell-7-exec"></label></td>
+    <td class="source" >
+        
+
+
+<form id="cell-7" aria-label="markdown cell 8">
+    <textarea readonly class="visually-hidden" name="source" id="cell-7-source" aria-hidden="false" autocomplete="off"
+        autocorrect="off" placeholder="" spellcheck="default" rows="18"
+        aria-labelledby="cell-7-exec" wrap="soft">## Main Content
+
+The main content of your tutorial should be subdivided into numbered sections with useful, descriptive headings that make sense based on the content. Break sections up with standard Markdown syntax headings:
+
+```
+## Section 1
+
+Intro to Section 1
+
+### Subsection 1a
+
+More detailed info about Section 1
+
+## Section 2
+
+A complete thought that's as important as Section 1 but doesn't need subsections.
+
+```</textarea>
+    <div class="render" role="document" aria-hidden="false">
+        <h2 id="main-content">Main Content</h2>
+<p>The main content of your tutorial should be subdivided into numbered sections with useful, descriptive headings that make sense based on the content. Break sections up with standard Markdown syntax headings:</p>
+<pre><code>## Section 1
+
+Intro to Section 1
+
+### Subsection 1a
+
+More detailed info about Section 1
+
+## Section 2
+
+A complete thought that's as important as Section 1 but doesn't need subsections.
+
+</code></pre>
+
+        
+    </div>
+</form>
+</td>
+    <td class="outputs">
+        
+
+</td>
+    <td class="cell_type">
+
+<label class="cell_type">
+    <select name="cell_type" disabled>
+        <option  value="code">code</option>
+        <option selected value="markdown">markdown</option>
+        <option  value="raw">raw</option>
+        <option  value="unknown">unknown</option>
+    </select>
+</label>
+</td>
+    <td class="metadata">
+        <script id="/cells/7/metadata"
+            type="application/json">{}</script>
+    </td>
+    <td class="toolbar">
+<div role="toolbar">
+    <input class="run" type="submit" form="cell-7" for="cell-7-source" value="run" title="run the cell"
+        tabindex="0">
+    <button onclick="document.querySelector('#cell-7-metadata').showModal()" title="show metadata">🛈</button>
+</div>
+</td>
+</tr>
+
+                
+                
+                
+                
+
+
+<tr class="cell markdown " id="/cells/8" draggable="false" aria-busy="false"
+    aria-rowindex="9">
+    <td class="execution_count" hidden><label for="cell-8-source"
+            id="cell-8-exec"></label></td>
+    <td class="source" >
+        
+
+
+<form id="cell-8" aria-label="markdown cell 9">
+    <textarea readonly class="visually-hidden" name="source" id="cell-8-source" aria-hidden="false" autocomplete="off"
+        autocorrect="off" placeholder="" spellcheck="default" rows="5"
+        aria-labelledby="cell-8-exec" wrap="soft">### Loading Data
+
+Loading data and file information should appear within your main content, at the same time the data is going to be used, if possible. These elements of your tutorial can be their own sections within the main content, but avoid generic or vague headings like “Loading Data” and instead use descriptive headings pertinent to the content of the tutorial and the actual data being downloaded or files being used.
+
+If the user needs to download data to run the tutorial properly, where possible, use [Astroquery](https://astroquery.readthedocs.io/en/latest/) (or similar) to retrieve files. If this is not possible, see the [data guide](https://github.com/spacetelescope/style-guides/blob/master/guides/where-to-put-your-data.md) for other options.</textarea>
+    <div class="render" role="document" aria-hidden="false">
+        <h3>Loading Data</h3>
+<p>Loading data and file information should appear within your main content, at the same time the data is going to be used, if possible. These elements of your tutorial can be their own sections within the main content, but avoid generic or vague headings like “Loading Data” and instead use descriptive headings pertinent to the content of the tutorial and the actual data being downloaded or files being used.</p>
+<p>If the user needs to download data to run the tutorial properly, where possible, use <a href="https://astroquery.readthedocs.io/en/latest/">Astroquery</a> (or similar) to retrieve files. If this is not possible, see the <a href="https://github.com/spacetelescope/style-guides/blob/master/guides/where-to-put-your-data.md">data guide</a> for other options.</p>
+
+        
+    </div>
+</form>
+</td>
+    <td class="outputs">
+        
+
+</td>
+    <td class="cell_type">
+
+<label class="cell_type">
+    <select name="cell_type" disabled>
+        <option  value="code">code</option>
+        <option selected value="markdown">markdown</option>
+        <option  value="raw">raw</option>
+        <option  value="unknown">unknown</option>
+    </select>
+</label>
+</td>
+    <td class="metadata">
+        <script id="/cells/8/metadata"
+            type="application/json">{
+  &quot;slideshow&quot;: {
+    &quot;slide_type&quot;: &quot;slide&quot;
+  }
+}</script>
+    </td>
+    <td class="toolbar">
+<div role="toolbar">
+    <input class="run" type="submit" form="cell-8" for="cell-8-source" value="run" title="run the cell"
+        tabindex="0">
+    <button onclick="document.querySelector('#cell-8-metadata').showModal()" title="show metadata">🛈</button>
+</div>
+</td>
+</tr>
+
+                
+                
+                
+                
+
+
+<tr class="cell markdown " id="/cells/9" draggable="false" aria-busy="false"
+    aria-rowindex="10">
+    <td class="execution_count" hidden><label for="cell-9-source"
+            id="cell-9-exec"></label></td>
+    <td class="source" >
+        
+
+
+<form id="cell-9" aria-label="markdown cell 10">
+    <textarea readonly class="visually-hidden" name="source" id="cell-9-source" aria-hidden="false" autocomplete="off"
+        autocorrect="off" placeholder="" spellcheck="default" rows="1"
+        aria-labelledby="cell-9-exec" wrap="soft">For example, if we wanted to query for data from MAST for Kepler we might do something like:</textarea>
+    <div class="render" role="document" aria-hidden="false">
+        <p>For example, if we wanted to query for data from MAST for Kepler we might do something like:</p>
+
+        
+    </div>
+</form>
+</td>
+    <td class="outputs">
+        
+
+</td>
+    <td class="cell_type">
+
+<label class="cell_type">
+    <select name="cell_type" disabled>
+        <option  value="code">code</option>
+        <option selected value="markdown">markdown</option>
+        <option  value="raw">raw</option>
+        <option  value="unknown">unknown</option>
+    </select>
+</label>
+</td>
+    <td class="metadata">
+        <script id="/cells/9/metadata"
+            type="application/json">{
+  &quot;slideshow&quot;: {
+    &quot;slide_type&quot;: &quot;slide&quot;
+  }
+}</script>
+    </td>
+    <td class="toolbar">
+<div role="toolbar">
+    <input class="run" type="submit" form="cell-9" for="cell-9-source" value="run" title="run the cell"
+        tabindex="0">
+    <button onclick="document.querySelector('#cell-9-metadata').showModal()" title="show metadata">🛈</button>
+</div>
+</td>
+</tr>
+
+                
+                
+                
+                
+
+
+<tr class="cell code " id="/cells/10" draggable="false" aria-busy="false"
+    aria-rowindex="11">
+    <td class="execution_count" hidden><label for="cell-10-source"
+            id="cell-10-exec"></label></td>
+    <td class="source" >
+        
+
+
+<form id="cell-10" aria-label="code cell 11">
+    <textarea readonly class="visually-hidden" name="source" id="cell-10-source" aria-hidden="false" autocomplete="off"
+        autocorrect="off" placeholder="" spellcheck="default" rows="4"
+        aria-labelledby="cell-10-exec" wrap="soft">keplerObs = Observations.query_criteria(target_name='kplr008957091', obs_collection='Kepler')
+keplerProds = Observations.get_product_list(keplerObs[0])
+yourProd = Observations.filter_products(keplerProds,extension='kplr008957091-2012277125453_lpd-targ.fits.gz',
+                                        mrp_only=False)
+</textarea>
+    <div class="render" role="document" aria-hidden="true">
+        
+        <div class=" highlight hl-ipython3"><pre><span></span><span class="n">keplerObs</span> <span class="o">=</span> <span class="n">Observations</span><span class="o">.</span><span class="n">query_criteria</span><span class="p">(</span><span class="n">target_name</span><span class="o">=</span><span class="s1">&#39;kplr008957091&#39;</span><span class="p">,</span> <span class="n">obs_collection</span><span class="o">=</span><span class="s1">&#39;Kepler&#39;</span><span class="p">)</span>
+<span class="n">keplerProds</span> <span class="o">=</span> <span class="n">Observations</span><span class="o">.</span><span class="n">get_product_list</span><span class="p">(</span><span class="n">keplerObs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">yourProd</span> <span class="o">=</span> <span class="n">Observations</span><span class="o">.</span><span class="n">filter_products</span><span class="p">(</span><span class="n">keplerProds</span><span class="p">,</span><span class="n">extension</span><span class="o">=</span><span class="s1">&#39;kplr008957091-2012277125453_lpd-targ.fits.gz&#39;</span><span class="p">,</span>
+                                        <span class="n">mrp_only</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</form>
+</td>
+    <td class="outputs">
+        
+
+</td>
+    <td class="cell_type">
+
+<label class="cell_type">
+    <select name="cell_type" disabled>
+        <option selected value="code">code</option>
+        <option  value="markdown">markdown</option>
+        <option  value="raw">raw</option>
+        <option  value="unknown">unknown</option>
+    </select>
+</label>
+</td>
+    <td class="metadata">
+        <script id="/cells/10/metadata"
+            type="application/json">{
+  &quot;slideshow&quot;: {
+    &quot;slide_type&quot;: &quot;fragment&quot;
+  }
+}</script>
+    </td>
+    <td class="toolbar">
+<div role="toolbar">
+    <input class="run" type="submit" form="cell-10" for="cell-10-source" value="run" title="run the cell"
+        tabindex="0">
+    <button onclick="document.querySelector('#cell-10-metadata').showModal()" title="show metadata">🛈</button>
+</div>
+</td>
+</tr>
+
+                
+                
+                
+                
+
+
+<tr class="cell markdown " id="/cells/11" draggable="false" aria-busy="false"
+    aria-rowindex="12">
+    <td class="execution_count" hidden><label for="cell-11-source"
+            id="cell-11-exec"></label></td>
+    <td class="source" >
+        
+
+
+<form id="cell-11" aria-label="markdown cell 12">
+    <textarea readonly class="visually-hidden" name="source" id="cell-11-source" aria-hidden="false" autocomplete="off"
+        autocorrect="off" placeholder="" spellcheck="default" rows="15"
+        aria-labelledby="cell-11-exec" wrap="soft">### File Information
+
+Explain pertinent details about the file you've just downloaded. For example, if working with Kepler light curves, explain what's in the different file extensions:
+
+```
+- No. 0 (Primary): This HDU contains metadata related to the entire file.
+- No. 1 (Light curve): This HDU contains a binary table that holds data like
+  flux measurements and times. We will extract information from here when we
+  define the parameters for the light curve plot.
+- No. 2 (Aperture): This HDU contains the image extension with data collected
+  from the aperture. We will also use this to display a bitmask plot that
+  visually represents the optimal aperture used to create the SAP_FLUX column in
+  HDU1.
+
+```</textarea>
+    <div class="render" role="document" aria-hidden="false">
+        <h3>File Information</h3>
+<p>Explain pertinent details about the file you've just downloaded. For example, if working with Kepler light curves, explain what's in the different file extensions:</p>
+<pre><code>- No. 0 (Primary): This HDU contains metadata related to the entire file.
+- No. 1 (Light curve): This HDU contains a binary table that holds data like
+  flux measurements and times. We will extract information from here when we
+  define the parameters for the light curve plot.
+- No. 2 (Aperture): This HDU contains the image extension with data collected
+  from the aperture. We will also use this to display a bitmask plot that
+  visually represents the optimal aperture used to create the SAP_FLUX column in
+  HDU1.
+
+</code></pre>
+
+        
+    </div>
+</form>
+</td>
+    <td class="outputs">
+        
+
+</td>
+    <td class="cell_type">
+
+<label class="cell_type">
+    <select name="cell_type" disabled>
+        <option  value="code">code</option>
+        <option selected value="markdown">markdown</option>
+        <option  value="raw">raw</option>
+        <option  value="unknown">unknown</option>
+    </select>
+</label>
+</td>
+    <td class="metadata">
+        <script id="/cells/11/metadata"
+            type="application/json">{}</script>
+    </td>
+    <td class="toolbar">
+<div role="toolbar">
+    <input class="run" type="submit" form="cell-11" for="cell-11-source" value="run" title="run the cell"
+        tabindex="0">
+    <button onclick="document.querySelector('#cell-11-metadata').showModal()" title="show metadata">🛈</button>
+</div>
+</td>
+</tr>
+
+                
+                
+                
+                
+
+
+<tr class="cell markdown " id="/cells/12" draggable="false" aria-busy="false"
+    aria-rowindex="13">
+    <td class="execution_count" hidden><label for="cell-12-source"
+            id="cell-12-exec"></label></td>
+    <td class="source" >
+        
+
+
+<form id="cell-12" aria-label="markdown cell 13">
+    <textarea readonly class="visually-hidden" name="source" id="cell-12-source" aria-hidden="false" autocomplete="off"
+        autocorrect="off" placeholder="" spellcheck="default" rows="1"
+        aria-labelledby="cell-12-exec" wrap="soft">Where possible (if the code supports it), use code examples that visually display the data in the tutorial. For example, if you are showing an object such as a Table, display a preview of the table:</textarea>
+    <div class="render" role="document" aria-hidden="false">
+        <p>Where possible (if the code supports it), use code examples that visually display the data in the tutorial. For example, if you are showing an object such as a Table, display a preview of the table:</p>
+
+        
+    </div>
+</form>
+</td>
+    <td class="outputs">
+        
+
+</td>
+    <td class="cell_type">
+
+<label class="cell_type">
+    <select name="cell_type" disabled>
+        <option  value="code">code</option>
+        <option selected value="markdown">markdown</option>
+        <option  value="raw">raw</option>
+        <option  value="unknown">unknown</option>
+    </select>
+</label>
+</td>
+    <td class="metadata">
+        <script id="/cells/12/metadata"
+            type="application/json">{}</script>
+    </td>
+    <td class="toolbar">
+<div role="toolbar">
+    <input class="run" type="submit" form="cell-12" for="cell-12-source" value="run" title="run the cell"
+        tabindex="0">
+    <button onclick="document.querySelector('#cell-12-metadata').showModal()" title="show metadata">🛈</button>
+</div>
+</td>
+</tr>
+
+                
+                
+                
+                
+
+
+<tr class="cell code " id="/cells/13" draggable="false" aria-busy="false"
+    aria-rowindex="14">
+    <td class="execution_count" ><label for="cell-13-source"
+            id="cell-13-exec">15</label></td>
+    <td class="source" >
+        
+
+
+<form id="cell-13" aria-label="code cell 14">
+    <textarea readonly class="visually-hidden" name="source" id="cell-13-source" aria-hidden="false" autocomplete="off"
+        autocorrect="off" placeholder="" spellcheck="default" rows="1"
+        aria-labelledby="cell-13-exec" wrap="soft">yourProd[0:5]</textarea>
+    <div class="render" role="document" aria-hidden="true">
+        
+        <div class=" highlight hl-ipython3"><pre><span></span><span class="n">yourProd</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</form>
+</td>
+    <td class="outputs">
+        
+
+
+<output form="cell-13" for="cell-13-source" role="document" class="output_area">
+
+<i>Table masked=True length=5</i>
+<table id="table140630505372920" class="table-striped table-bordered table-condensed">
+<thead><tr><th>obsID</th><th>obs_collection</th><th>dataproduct_type</th><th>obs_id</th><th>description</th><th>type</th><th>dataURI</th><th>productType</th><th>productGroupDescription</th><th>productSubGroupDescription</th><th>productDocumentationURL</th><th>project</th><th>prvversion</th><th>proposal_id</th><th>productFilename</th><th>size</th><th>parent_obsid</th></tr></thead>
+<thead><tr><th>str10</th><th>str6</th><th>str10</th><th>str36</th><th>str59</th><th>str1</th><th>str110</th><th>str7</th><th>str28</th><th>str1</th><th>str1</th><th>str6</th><th>str1</th><th>str7</th><th>str44</th><th>int64</th><th>str10</th></tr></thead>
+<tr><td>9000159893</td><td>Kepler</td><td>timeseries</td><td>kplr008957091_lc_Q000000000011111111</td><td>Preview-Full</td><td>C</td><td>mast:Kepler/url/missions/kepler/previews/0089/008957091/kplr008957091-2013098041711_llc_bw_large.png</td><td>PREVIEW</td><td>--</td><td>--</td><td>--</td><td>Kepler</td><td>--</td><td>GO30032</td><td>kplr008957091-2013098041711_llc_bw_large.png</td><td>29653</td><td>9000159893</td></tr>
+<tr><td>9000159893</td><td>Kepler</td><td>timeseries</td><td>kplr008957091_lc_Q000000000011111111</td><td>Lightcurve Long Cadence (CLC) - Q10</td><td>C</td><td>mast:Kepler/url/missions/kepler/lightcurves/0089/008957091/kplr008957091-2011271113734_llc.fits</td><td>SCIENCE</td><td>--</td><td>--</td><td>--</td><td>Kepler</td><td>--</td><td>GO30032</td><td>kplr008957091-2011271113734_llc.fits</td><td>486720</td><td>9000159893</td></tr>
+<tr><td>9000159893</td><td>Kepler</td><td>timeseries</td><td>kplr008957091_lc_Q000000000011111111</td><td>Lightcurve Long Cadence (CLC) - Q11</td><td>C</td><td>mast:Kepler/url/missions/kepler/lightcurves/0089/008957091/kplr008957091-2012004120508_llc.fits</td><td>SCIENCE</td><td>--</td><td>--</td><td>--</td><td>Kepler</td><td>--</td><td>GO30032</td><td>kplr008957091-2012004120508_llc.fits</td><td>506880</td><td>9000159893</td></tr>
+<tr><td>9000159893</td><td>Kepler</td><td>timeseries</td><td>kplr008957091_lc_Q000000000011111111</td><td>Lightcurve Long Cadence (CLC) - Q12</td><td>C</td><td>mast:Kepler/url/missions/kepler/lightcurves/0089/008957091/kplr008957091-2012088054726_llc.fits</td><td>SCIENCE</td><td>--</td><td>--</td><td>--</td><td>Kepler</td><td>--</td><td>GO30032</td><td>kplr008957091-2012088054726_llc.fits</td><td>434880</td><td>9000159893</td></tr>
+<tr><td>9000159893</td><td>Kepler</td><td>timeseries</td><td>kplr008957091_lc_Q000000000011111111</td><td>Lightcurve Long Cadence (CLC) - Q13</td><td>C</td><td>mast:Kepler/url/missions/kepler/lightcurves/0089/008957091/kplr008957091-2012179063303_llc.fits</td><td>SCIENCE</td><td>--</td><td>--</td><td>--</td><td>Kepler</td><td>--</td><td>GO30032</td><td>kplr008957091-2012179063303_llc.fits</td><td>472320</td><td>9000159893</td></tr>
+</table>
+
+</output>
+
+
+</td>
+    <td class="cell_type">
+
+<label class="cell_type">
+    <select name="cell_type" disabled>
+        <option selected value="code">code</option>
+        <option  value="markdown">markdown</option>
+        <option  value="raw">raw</option>
+        <option  value="unknown">unknown</option>
+    </select>
+</label>
+</td>
+    <td class="metadata">
+        <script id="/cells/13/metadata"
+            type="application/json">{}</script>
+    </td>
+    <td class="toolbar">
+<div role="toolbar">
+    <input class="run" type="submit" form="cell-13" for="cell-13-source" value="run" title="run the cell"
+        tabindex="0">
+    <button onclick="document.querySelector('#cell-13-metadata').showModal()" title="show metadata">🛈</button>
+</div>
+</td>
+</tr>
+
+                
+                
+                
+                
+
+
+<tr class="cell code " id="/cells/14" draggable="false" aria-busy="false"
+    aria-rowindex="15">
+    <td class="execution_count" hidden><label for="cell-14-source"
+            id="cell-14-exec"></label></td>
+    <td class="source" >
+        
+
+
+<form id="cell-14" aria-label="code cell 15">
+    <textarea readonly class="visually-hidden" name="source" id="cell-14-source" aria-hidden="false" autocomplete="off"
+        autocorrect="off" placeholder="" spellcheck="default" rows="2"
+        aria-labelledby="cell-14-exec" wrap="soft"># Download the products
+Observations.download_products(yourProd, mrp_only=False, cache=False)</textarea>
+    <div class="render" role="document" aria-hidden="true">
+        
+        <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Download the products</span>
+<span class="n">Observations</span><span class="o">.</span><span class="n">download_products</span><span class="p">(</span><span class="n">yourProd</span><span class="p">,</span> <span class="n">mrp_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</form>
+</td>
+    <td class="outputs">
+        
+
+</td>
+    <td class="cell_type">
+
+<label class="cell_type">
+    <select name="cell_type" disabled>
+        <option selected value="code">code</option>
+        <option  value="markdown">markdown</option>
+        <option  value="raw">raw</option>
+        <option  value="unknown">unknown</option>
+    </select>
+</label>
+</td>
+    <td class="metadata">
+        <script id="/cells/14/metadata"
+            type="application/json">{}</script>
+    </td>
+    <td class="toolbar">
+<div role="toolbar">
+    <input class="run" type="submit" form="cell-14" for="cell-14-source" value="run" title="run the cell"
+        tabindex="0">
+    <button onclick="document.querySelector('#cell-14-metadata').showModal()" title="show metadata">🛈</button>
+</div>
+</td>
+</tr>
+
+                
+                
+                
+                
+
+
+<tr class="cell markdown " id="/cells/15" draggable="false" aria-busy="false"
+    aria-rowindex="16">
+    <td class="execution_count" hidden><label for="cell-15-source"
+            id="cell-15-exec"></label></td>
+    <td class="source" >
+        
+
+
+<form id="cell-15" aria-label="markdown cell 16">
+    <textarea readonly class="visually-hidden" name="source" id="cell-15-source" aria-hidden="false" autocomplete="off"
+        autocorrect="off" placeholder="" spellcheck="default" rows="2"
+        aria-labelledby="cell-15-exec" wrap="soft">## Exercises
+Exercises are optional, but encouraged. Exercises can be woven into the main content of your tutorial, or appear in their own section toward the end of the tutorial. Final exercises can be more challenging, similar to homework problems. They can be minimal or take as long as 30 minutes to an hour to complete. If you do have one or more exercises in your tutorial, be sure to leave a blank code cell underneath each to show the reader that they're meant to try out their new skill right there. You may also want to include a "solutions" notebook next to your main notebook for the reader to check their work after they have finished their attempt.</textarea>
+    <div class="render" role="document" aria-hidden="false">
+        <h2 id="exercises">Exercises</h2>
+<p>Exercises are optional, but encouraged. Exercises can be woven into the main content of your tutorial, or appear in their own section toward the end of the tutorial. Final exercises can be more challenging, similar to homework problems. They can be minimal or take as long as 30 minutes to an hour to complete. If you do have one or more exercises in your tutorial, be sure to leave a blank code cell underneath each to show the reader that they're meant to try out their new skill right there. You may also want to include a &quot;solutions&quot; notebook next to your main notebook for the reader to check their work after they have finished their attempt.</p>
+
+        
+    </div>
+</form>
+</td>
+    <td class="outputs">
+        
+
+</td>
+    <td class="cell_type">
+
+<label class="cell_type">
+    <select name="cell_type" disabled>
+        <option  value="code">code</option>
+        <option selected value="markdown">markdown</option>
+        <option  value="raw">raw</option>
+        <option  value="unknown">unknown</option>
+    </select>
+</label>
+</td>
+    <td class="metadata">
+        <script id="/cells/15/metadata"
+            type="application/json">{}</script>
+    </td>
+    <td class="toolbar">
+<div role="toolbar">
+    <input class="run" type="submit" form="cell-15" for="cell-15-source" value="run" title="run the cell"
+        tabindex="0">
+    <button onclick="document.querySelector('#cell-15-metadata').showModal()" title="show metadata">🛈</button>
+</div>
+</td>
+</tr>
+
+                
+                
+                
+                
+
+
+<tr class="cell markdown " id="/cells/16" draggable="false" aria-busy="false"
+    aria-rowindex="17">
+    <td class="execution_count" hidden><label for="cell-16-source"
+            id="cell-16-exec"></label></td>
+    <td class="source" >
+        
+
+
+<form id="cell-16" aria-label="markdown cell 17">
+    <textarea readonly class="visually-hidden" name="source" id="cell-16-source" aria-hidden="false" autocomplete="off"
+        autocorrect="off" placeholder="" spellcheck="default" rows="8"
+        aria-labelledby="cell-16-exec" wrap="soft">## Additional Resources
+
+This section is optional. Try to weave resource links into the main content of your tutorial so that they are falling in line with the context of your writing. For resources that do not fit cleanly into your narrative, you may include an additional resources section at the end of your tutorial. Usually a list of links using Markdown bullet list plus link format is appropriate:
+
+- [MAST API](https://mast.stsci.edu/api/v0/index.html)
+- [Kepler Archive Page (MAST)](https://archive.stsci.edu/kepler/)
+- [Kepler Archive Manual](https://archive.stsci.edu/kepler/manuals/archive_manual.pdf)
+- [Exo.MAST website](https://exo.mast.stsci.edu/)</textarea>
+    <div class="render" role="document" aria-hidden="false">
+        <h2 id="additional-resources">Additional Resources</h2>
+<p>This section is optional. Try to weave resource links into the main content of your tutorial so that they are falling in line with the context of your writing. For resources that do not fit cleanly into your narrative, you may include an additional resources section at the end of your tutorial. Usually a list of links using Markdown bullet list plus link format is appropriate:</p>
+<ul>
+<li><a href="https://mast.stsci.edu/api/v0/index.html">MAST API</a></li>
+<li><a href="https://archive.stsci.edu/kepler/">Kepler Archive Page (MAST)</a></li>
+<li><a href="https://archive.stsci.edu/kepler/manuals/archive_manual.pdf">Kepler Archive Manual</a></li>
+<li><a href="https://exo.mast.stsci.edu/">Exo.MAST website</a></li>
+</ul>
+
+        
+    </div>
+</form>
+</td>
+    <td class="outputs">
+        
+
+</td>
+    <td class="cell_type">
+
+<label class="cell_type">
+    <select name="cell_type" disabled>
+        <option  value="code">code</option>
+        <option selected value="markdown">markdown</option>
+        <option  value="raw">raw</option>
+        <option  value="unknown">unknown</option>
+    </select>
+</label>
+</td>
+    <td class="metadata">
+        <script id="/cells/16/metadata"
+            type="application/json">{}</script>
+    </td>
+    <td class="toolbar">
+<div role="toolbar">
+    <input class="run" type="submit" form="cell-16" for="cell-16-source" value="run" title="run the cell"
+        tabindex="0">
+    <button onclick="document.querySelector('#cell-16-metadata').showModal()" title="show metadata">🛈</button>
+</div>
+</td>
+</tr>
+
+                
+                
+                
+                
+
+
+<tr class="cell markdown " id="/cells/17" draggable="false" aria-busy="false"
+    aria-rowindex="18">
+    <td class="execution_count" hidden><label for="cell-17-source"
+            id="cell-17-exec"></label></td>
+    <td class="source" >
+        
+
+
+<form id="cell-17" aria-label="markdown cell 18">
+    <textarea readonly class="visually-hidden" name="source" id="cell-17-source" aria-hidden="false" autocomplete="off"
+        autocorrect="off" placeholder="" spellcheck="default" rows="5"
+        aria-labelledby="cell-17-exec" wrap="soft">## About this Notebook
+Let the world know who the author of this great tutorial is! If possible and appropriate, include a contact email address for users who might need support (for example, `archive@stsci.edu`). You can also optionally include keywords, your funding source, or a last update date in this section.
+
+**Author:** Jessie Blogs, Archive Scientist.  
+**Updated On:** YYYY-MM-DD</textarea>
+    <div class="render" role="document" aria-hidden="false">
+        <h2 id="about-this-notebook">About this Notebook</h2>
+<p>Let the world know who the author of this great tutorial is! If possible and appropriate, include a contact email address for users who might need support (for example, <code>archive@stsci.edu</code>). You can also optionally include keywords, your funding source, or a last update date in this section.</p>
+<p><strong>Author:</strong> Jessie Blogs, Archive Scientist.<br />
+<strong>Updated On:</strong> YYYY-MM-DD</p>
+
+        
+    </div>
+</form>
+</td>
+    <td class="outputs">
+        
+
+</td>
+    <td class="cell_type">
+
+<label class="cell_type">
+    <select name="cell_type" disabled>
+        <option  value="code">code</option>
+        <option selected value="markdown">markdown</option>
+        <option  value="raw">raw</option>
+        <option  value="unknown">unknown</option>
+    </select>
+</label>
+</td>
+    <td class="metadata">
+        <script id="/cells/17/metadata"
+            type="application/json">{
+  &quot;slideshow&quot;: {
+    &quot;slide_type&quot;: &quot;slide&quot;
+  }
+}</script>
+    </td>
+    <td class="toolbar">
+<div role="toolbar">
+    <input class="run" type="submit" form="cell-17" for="cell-17-source" value="run" title="run the cell"
+        tabindex="0">
+    <button onclick="document.querySelector('#cell-17-metadata').showModal()" title="show metadata">🛈</button>
+</div>
+</td>
+</tr>
+
+                
+                
+                
+                
+
+
+<tr class="cell markdown " id="/cells/18" draggable="false" aria-busy="false"
+    aria-rowindex="19">
+    <td class="execution_count" hidden><label for="cell-18-source"
+            id="cell-18-exec"></label></td>
+    <td class="source" >
+        
+
+
+<form id="cell-18" aria-label="markdown cell 19">
+    <textarea readonly class="visually-hidden" name="source" id="cell-18-source" aria-hidden="false" autocomplete="off"
+        autocorrect="off" placeholder="" spellcheck="default" rows="12"
+        aria-labelledby="cell-18-exec" wrap="soft">## Citations
+Provide your reader with guidelines on how to cite open source software and other resources in their own published work.
+
+```
+If you use `astropy` or `lightkurve` for published research, please cite the
+authors. Follow these links for more information about citing `astropy` and
+`lightkurve`:
+
+* [Citing `astropy`](https://www.astropy.org/acknowledging.html)
+* [Citing `lightkurve`](http://docs.lightkurve.org/about/citing.html)
+
+```</textarea>
+    <div class="render" role="document" aria-hidden="false">
+        <h2 id="citations">Citations</h2>
+<p>Provide your reader with guidelines on how to cite open source software and other resources in their own published work.</p>
+<pre><code>If you use `astropy` or `lightkurve` for published research, please cite the
+authors. Follow these links for more information about citing `astropy` and
+`lightkurve`:
+
+* [Citing `astropy`](https://www.astropy.org/acknowledging.html)
+* [Citing `lightkurve`](http://docs.lightkurve.org/about/citing.html)
+
+</code></pre>
+
+        
+    </div>
+</form>
+</td>
+    <td class="outputs">
+        
+
+</td>
+    <td class="cell_type">
+
+<label class="cell_type">
+    <select name="cell_type" disabled>
+        <option  value="code">code</option>
+        <option selected value="markdown">markdown</option>
+        <option  value="raw">raw</option>
+        <option  value="unknown">unknown</option>
+    </select>
+</label>
+</td>
+    <td class="metadata">
+        <script id="/cells/18/metadata"
+            type="application/json">{}</script>
+    </td>
+    <td class="toolbar">
+<div role="toolbar">
+    <input class="run" type="submit" form="cell-18" for="cell-18-source" value="run" title="run the cell"
+        tabindex="0">
+    <button onclick="document.querySelector('#cell-18-metadata').showModal()" title="show metadata">🛈</button>
+</div>
+</td>
+</tr>
+
+                
+                
+                
+                
+
+
+<tr class="cell markdown " id="/cells/6" draggable="false" aria-busy="false"
+    aria-rowindex="7">
+    <td class="execution_count" hidden><label for="cell-6-source"
+            id="cell-6-exec"></label></td>
+    <td class="source" >
+        
+
+
+<form id="cell-6" aria-label="markdown cell 7">
+    <textarea readonly class="visually-hidden" name="source" id="cell-6-source" aria-hidden="false" autocomplete="off"
+        autocorrect="off" placeholder="" spellcheck="default" rows="1"
+        aria-labelledby="cell-6-exec" wrap="soft">***</textarea>
+    <div class="render" role="document" aria-hidden="false">
+        <hr />
+
+        
+    </div>
+</form>
+</td>
+    <td class="outputs">
+        
+
+</td>
+    <td class="cell_type">
+
+<label class="cell_type">
+    <select name="cell_type" disabled>
+        <option  value="code">code</option>
+        <option selected value="markdown">markdown</option>
+        <option  value="raw">raw</option>
+        <option  value="unknown">unknown</option>
+    </select>
+</label>
+</td>
+    <td class="metadata">
+        <script id="/cells/6/metadata"
+            type="application/json">{}</script>
+    </td>
+    <td class="toolbar">
+<div role="toolbar">
+    <input class="run" type="submit" form="cell-6" for="cell-6-source" value="run" title="run the cell"
+        tabindex="0">
+    <button onclick="document.querySelector('#cell-6-metadata').showModal()" title="show metadata">🛈</button>
+</div>
+</td>
+</tr>
+
+                
+                
+                
+                
+
+
+<tr class="cell markdown " id="/cells/20" draggable="false" aria-busy="false"
+    aria-rowindex="21">
+    <td class="execution_count" hidden><label for="cell-20-source"
+            id="cell-20-exec"></label></td>
+    <td class="source" >
+        
+
+
+<form id="cell-20" aria-label="markdown cell 21">
+    <textarea readonly class="visually-hidden" name="source" id="cell-20-source" aria-hidden="false" autocomplete="off"
+        autocorrect="off" placeholder="" spellcheck="default" rows="2"
+        aria-labelledby="cell-20-exec" wrap="soft">[Top of Page](#top)
+<img style="float: right;" src="https://raw.githubusercontent.com/spacetelescope/notebooks/master/assets/stsci_pri_combo_mark_horizonal_white_bkgd.png" alt="Space Telescope Logo" width="200px"/> </textarea>
+    <div class="render" role="document" aria-hidden="false">
+        <p><a href="#top">Top of Page</a>
+<img style="float: right;" src="https://raw.githubusercontent.com/spacetelescope/notebooks/master/assets/stsci_pri_combo_mark_horizonal_white_bkgd.png" alt="Space Telescope Logo" width="200px"/></p>
+
+        
+    </div>
+</form>
+</td>
+    <td class="outputs">
+        
+
+</td>
+    <td class="cell_type">
+
+<label class="cell_type">
+    <select name="cell_type" disabled>
+        <option  value="code">code</option>
+        <option selected value="markdown">markdown</option>
+        <option  value="raw">raw</option>
+        <option  value="unknown">unknown</option>
+    </select>
+</label>
+</td>
+    <td class="metadata">
+        <script id="/cells/20/metadata"
+            type="application/json">{}</script>
+    </td>
+    <td class="toolbar">
+<div role="toolbar">
+    <input class="run" type="submit" form="cell-20" for="cell-20-source" value="run" title="run the cell"
+        tabindex="0">
+    <button onclick="document.querySelector('#cell-20-metadata').showModal()" title="show metadata">🛈</button>
+</div>
+</td>
+</tr>
+
+                
+                
+                </tbody>
+            <tfoot>
+                <td class="execution count"></td>
+                <td class="source"></td>
+                <td class="outputs"></td>
+                <td class="cell type"></td>
+                <td class="metadata"></td>
+                <td class="toolbar"></td>
+            </tfoot>
+        </table>
+        <footer id="nb-footer" class="notebook">
+            <details id="nb-metadata">
+                <summary>Metadata</summary>
+                <script id="/metadata" type="application/json">{
+  "kernelspec": {
+    "display_name": "Python 3",
+    "language": "python",
+    "name": "python3"
+  },
+  "language_info": {
+    "codemirror_mode": {
+      "name": "ipython",
+      "version": 3
+    },
+    "file_extension": ".py",
+    "mimetype": "text/x-python",
+    "name": "python",
+    "nbconvert_exporter": "python",
+    "pygments_lexer": "ipython3",
+    "version": "3.6.8"
+  }
+}</script>
+            </details>
+        </footer>
+    </main>
+    <footer id="site-footer">
+        <!-- legal goes here -->
+        <details id="site-settings">
+            <summary id="site-settings-summary">Site Accessibility Settings</summary>
+        </details>
+    </footer>
+</body>
+
+<script>
+HEADINGS = "h1, h2, h3, h4, h5, h6"
+
+function anchorHeadings() {
+    document.querySelectorAll(HEADINGS).forEach((x) => {
+        var a = document.createElement("a")
+        console.log(x);
+        var id = x.id ? x.id : (x.textContent ? slugify(x.textContent) : "");
+        if (id) {
+            x.id = id;
+            a.href = `#${id}`;
+            a.text = x.textContent;
+            while (x.firstChild) { x.removeChild(x.firstChild); }
+            x.appendChild(a);
+        }
+    })
+}
+
+function buildToc() {
+    var list = toc = document.createElement("ul")
+    document.querySelectorAll(HEADINGS).forEach((x) => {
+        var li = document.createElement("li");
+        toc.appendChild(li)
+        var node = x.querySelector("a");
+        node ? li.appendChild(node.cloneNode(true)) : null;
+        var row = getParentRow(x);
+        var i = parseInt(row.getAttribute("aria-rowindex"), 10);
+        var cell_link = document.createElement("a");
+        cell_link.classList = "cell-index";
+        cell_link.text = i;
+        // cell_link.href = `#/cells/${row.i}`;
+        li.prepend(cell_link);
+    });
+    return toc;
+}
+
+function slugify(string) {
+    const a = 'àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìıİłḿñńǹňôöòóœøōõőṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż·/_,:;'
+    const b = 'aaaaaaaaaacccddeeeeeeeegghiiiiiiiilmnnnnoooooooooprrsssssttuuuuuuuuuwxyyzzz------'
+    const p = new RegExp(a.split('').join('|'), 'g')
+
+    return string.toString().toLowerCase()
+        .replace(/\s+/g, '-') // Replace spaces with -
+        .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
+        .replace(/&/g, '-and-') // Replace & with 'and'
+        .replace(/[^\w\-]+/g, '') // Remove all non-word characters
+        .replace(/\-\-+/g, '-') // Replace multiple - with single -
+        .replace(/^-+/, '') // Trim - from start of text
+        .replace(/-+$/, '') // Trim - from end of text
+}
+
+
+function setTocFocus() {
+    var id = window.location.hash;
+    document.querySelector(id.startsWith("#/cells") ? "#nb-nav-cells-widget" : `main >  header a[href="${window.location.hash}"]`).focus();
+}
+
+function getParentRow(element) {
+    return element.tagName == "TR" ? element : getParentRow(element.parentElement)
+}
+
+function setHeadingLinkFocus() {
+    document.getElementById(window.location.hash.substring(1)).querySelector(
+        window.location.hash.startsWith("#/cells") ? "textarea" : "a"
+    ).focus();
+}
+
+window.addEventListener('load', function () {
+    anchorHeadings();
+    document.querySelector("#nb-nav nav").appendChild(buildToc());
+    var widget = document.getElementById("nb-nav-cells-widget");
+    // add a quicky key to open the table of contents
+    var toc = document.getElementById("nb-nav");
+
+    document.addEventListener("keydown", (key) => {
+        if (key.key == "Escape") {
+            // this event shouldnt happen in an interactive element.  
+            toc.toggleAttribute("open", key.ctrlKey ? undefined : false);
+        }
+    });
+
+    // toggling the toc sets focus on the document or the table of contents
+    toc.addEventListener("toggle", () => {
+        toc.open ? setTocFocus() : setHeadingLinkFocus()
+    });
+
+    // click handlers for the table of contents navigation
+    toc.querySelectorAll("#nb-nav a").forEach((x) => {
+        x.addEventListener("click", () => {
+            toc.toggleAttribute("open");
+        })
+    });
+
+
+    // update the url location when headers are passed.
+    document.querySelectorAll("table :where(h1, h2, h3, h4, h5, h6) > a").forEach((x) => {
+        x.addEventListener("focus", (event) => {
+            widget.value = getParentRow(event.target).ariaRowIndex;
+            history.replaceState({}, `${event.target.textContent}`, event.target.href);
+        })
+    });
+
+    // link the cells text area to the cell anchor and update it on tabbing
+    document.querySelectorAll("tr.code.cell td.source textarea, td.outputs").forEach((x) => {
+        x.addEventListener("focus", (event) => {
+            var number = getParentRow(event.target).ariaRowIndex;
+            widget.value = number;
+            history.replaceState({}, `Code cell ${number}`, `#/cells/${widget.value}`);
+        })
+    })
+
+    var slider = document.getElementById("nb-nav-cells-widget");
+
+    // define the cell slider input triggers we scroll a cell into view
+    slider.addEventListener("input", (event) => {
+        var id = `#/cells/${event.target.value}`;
+        event.target.nextElementSibling.value = event.target.value;
+        document.getElementById(id.substring(1)).scrollIntoView();
+    });
+
+    // the cell slider updates the page history
+    slider.addEventListener("change", (event) => {
+        var id = `#/cells/${event.target.value}`;
+        history.replaceState({}, `Cell ${event.target.value}`, id);
+    })
+
+    // update the cell slider when the page loads
+    slider.dispatchEvent(new Event("input"));
+});</script>
+
+
+
+
+
+
+</html>
